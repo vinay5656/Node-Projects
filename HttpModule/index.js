@@ -30,10 +30,9 @@ http.createServer((req, res) => {
             fileName = req.url;
         }
         console.log("fileName = "+ fileName);
-    const _dirname = path.dirname(fileURLToPath(import.meta.url))
-     const filePath = path.join(_dirname, fileName);
-     console.log(filePath);
-
+        const _dirname = path.dirname(fileURLToPath(import.meta.url))
+        const filePath = path.join(_dirname, fileName);
+        console.log(filePath);
         if(!fs.existsSync(filePath)){
             send404(res);
             return;
